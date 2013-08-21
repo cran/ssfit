@@ -12,8 +12,8 @@ Fits complex parametric models without likelihoods, using the method proposed by
 \tabular{ll}{
 Package: \tab ssfit\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2013-07-04\cr
+Version: \tab 1.1\cr
+Date: \tab 2013-08-21\cr
 Depends: survey
 License: \tab GPL (>= 2)\cr
 }

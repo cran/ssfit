@@ -9,7 +9,7 @@ Fits complex parametric models with intractable likelihood using the method prop
 }
 \usage{
 fit.model(p, q, n, r, starting_values, h_vector, data_true, sim_data, features, n_iter,
-print_results = TRUE)
+print_results = TRUE, variances = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,12 +18,13 @@ print_results = TRUE)
   \item{n}{Sample size. Usually equal to the number of observations in the data (\code{data_true}).}
   \item{r}{Number of simulations to be run at each design point, in each iteration.}
   \item{starting_values}{A vector of starting values for the parameter vector.}
-  \item{h_vector}{A vector of spacings $h$.}
+  \item{h_vector}{A vector of spacings \code{h}.}
   \item{data_true}{The dataset.}
   \item{sim_data}{A function which simulates data using the model to be fitted.}
   \item{features}{A function which calculates the features / summary statistics.}
   \item{n_iter}{Number of iterations of the algorithm to be performed.}
   \item{print_results}{If \code{TRUE}, the estimates of the parameters are printed at each iteration.}
+  \item{variances}{If \code{TRUE}, the covariance matrix of the estimates of the parameters at each iteration are saved into a list. If \code{FALSE}, only that of the estimates obtained at the last iteration is obtained.}
 }
 
 \details{
@@ -37,6 +38,10 @@ Function \code{features} must take as an argument the simulated data generated b
 	\item{var_estimates}{The covariance matrix of the final estimates.}
 	\item{L}{The matrix of coefficients L.}
 	\item{sigma}{The covariance matrix of the features.}
+	\item{zbar}{The average values of the simulated features at each design point.}
+	\item{z_D}{The values of the features calculated from the data.}
+	\item{ybar}{The linear combinations of the simulated features at each design point.}
+	\item{y_D}{The linear combinations of the features calculated from the data.}
 }
 \references{
 Cox, D. R. and Kartsonaki, C. (2012). The fitting of complex parametric models. \emph{Biometrika}, \bold{99} (3): 741--747.
@@ -66,7 +71,7 @@ features_function <- function(data) {
 	
 fit1 <- fit.model(p = 1, q = 3, n = 100, r = 100, starting_values = 5, h_vector = 0.1,
 data_true = rnorm(100, 2, 1), sim_data = sim_function, features = features_function, 
-n_iter = 50, print_results = TRUE) 
+n_iter = 50, print_results = TRUE, variances = TRUE) 
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
