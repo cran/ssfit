@@ -19,7 +19,7 @@ function (p, q, n, r, starting_values, h_vector, data_true, sim_data,
         D <- matrix(c(1, -1), nrow = 2, ncol = 1)
     	}
     if (p > 1) {
-        D <- 2 * hadamard(k - 1) - 1
+        D <- 2 * survey::hadamard(k - 1) - 1
         D <- D[, 2:(p + 1)]
     	}
 

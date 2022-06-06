@@ -3,7 +3,7 @@
 \alias{ssfit}
 \docType{package}
 \title{
-Fitting of parametric models using summary statistics
+Fitting of Parametric Models using Summary Statistics
 }
 \description{
 Fits complex parametric models without likelihoods, using the method proposed by Cox and Kartsonaki (2012).
@@ -12,8 +12,8 @@ Fits complex parametric models without likelihoods, using the method proposed by
 \tabular{ll}{
 Package: \tab ssfit\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2013-08-21\cr
+Version: \tab 1.2\cr
+Date: \tab 2022-06-06\cr
 Depends: survey
 License: \tab GPL (>= 2)\cr
 }
